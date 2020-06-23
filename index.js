@@ -380,7 +380,7 @@ bot.on("message", message => {
     case "id":
       const n3id = new Discord.RichEmbed()
         .setTitle("N3XT PLAYERS ID")
-        .setURL("https://n3xt-players.jimdofree.com/n3id/")
+        .setURL("https://n3xt-players.jimdofree.com/account")
         .addField(
           "¿Qué puedo hacer con un ID de N3XT PLAYERS?",
           "Con tu ID de N3XT PLAYERS puedes acceder a todos los servicios de N3XT PLAYERS, N3ID."
