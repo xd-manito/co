@@ -28,6 +28,7 @@ const bot = new Discord.Client();
 const PREFIX = "n3";
 
 bot.on("ready", () => {
+  //mal propuse
   console.log("estoy listo!");
   bot.user
     .setActivity("N3XT PLAYERS SERVER", { type: "WATCHING" })
@@ -58,6 +59,7 @@ bot.on("guildMemberAdd", member => {
 });
 
 bot.on("message", message => {
+  //»»»»»»» mal a propósito «««««««
   let args = message.content.substring(PREFIX.length).split(" ");
   switch (args[0]) {
     case "website":
@@ -99,9 +101,9 @@ bot.on("message", message => {
       break;
 
     case "ayuda":
-      const n3ayuda = new Discord.RichEmbed()
+      var n3ayuda = new Discord.RichEmbed()
         .setTitle("N3Ayuda")
-        .setURL("https://n3xt-players.jimdofree.com/soporte")
+        .setURL("https://n3xt-players.jimdofree.com/support")
         .addField(
           "Soporte Técnico",
           "Si tienes alguna duda de algún servicio de N3XT PLAYERS, ¡Encuentra tu respuesta en nuestra web o menciona a `@N3Team` en el chat para obter ayuda más rápida!, N3XT PLAYERS."
@@ -115,6 +117,25 @@ bot.on("message", message => {
           "https://cdn.discordapp.com/attachments/716758879676923915/716760351458459698/unknown.png"
         );
       message.channel.sendEmbed(n3ayuda);
+      break;
+
+    case "soporte":
+      const n3soporte = new Discord.RichEmbed()
+        .setTitle("N3Soporte")
+        .setURL("https://n3xt-players.jimdofree.com/support")
+        .addField(
+          "Soporte Técnico",
+          "Si tienes alguna duda de algún servicio de N3XT PLAYERS, ¡Encuentra tu respuesta en nuestra web o menciona a `@N3Team` en el chat para obter ayuda más rápida!, N3XT PLAYERS."
+        )
+        .setColor(0x2f3136)
+        .setThumbnail(
+          "https://cdn.discordapp.com/attachments/697970583513596006/717433046780870706/20200602_134219-ANIMATION.gif"
+        )
+        .setFooter(
+          "N3Assistant",
+          "https://cdn.discordapp.com/attachments/716758879676923915/716760351458459698/unknown.png"
+        );
+      message.channel.sendEmbed(n3soporte);
       break;
 
     case "clear": //clear
@@ -186,25 +207,6 @@ bot.on("message", message => {
       message.channel.sendEmbed(n3instant);
       break;
 
-    case "games":
-      const n3games = new Discord.RichEmbed()
-        .setTitle("N3Games")
-        .setURL("https://n3xt-players.jimdofree.com/play/") //link del conglomerado n3play
-        .addField(
-          "Descripción",
-          "Juega entre muchos juegos con tus amigos y disfruta de los juegos móviles mas emblemáticos o los que más te interesan y disfruta de mucho más entre todos. Cada MB cuenta, todos los juegos en streamimg para ti, N3Games."
-        )
-        .setColor(0x2f3136)
-        .setThumbnail(
-          "https://cdn.discordapp.com/attachments/697970583513596006/717504863105450025/Logopit_1590899551648.png"
-        )
-        .setFooter(
-          "N3Assistant",
-          "https://cdn.discordapp.com/attachments/716758879676923915/716760351458459698/unknown.png"
-        );
-      message.channel.sendEmbed(n3games);
-      break;
-
     case "partners":
       const n3playpartners = new Discord.RichEmbed()
         .setTitle("N3XT PLAYERS PARTNERS")
@@ -232,25 +234,6 @@ bot.on("message", message => {
       message.channel.sendEmbed(n3playpartners);
       break;
 
-    case "tools":
-      const n3tools = new Discord.RichEmbed()
-        .setTitle("N3Tools")
-        .setURL("https://n3xt-players.jimdofree.com/tools/") //link del conglomerado n3tools
-        .addField(
-          "Descripción",
-          "Crea tu propio contenido de imágenes, videos y audio para tener en tu dispositivo o compartir. Sé un desarrolador de software y sube tu aplicación a N3Store con un generador de proyectos oficial de Steelly basado en N3Ux. Crea documentos, presentaciones y hojas de cálculo, conecta con tu equipo y colabora en vivo. Todo esto y más en una sola aplicación, N3Tools."
-        )
-        .setColor(0x2f3136)
-        .setThumbnail(
-          "https://cdn.discordapp.com/attachments/697970583513596006/717504863960956958/Logopit_1590899898579.png"
-        )
-        .setFooter(
-          "N3Assistant",
-          "https://cdn.discordapp.com/attachments/716758879676923915/716760351458459698/unknown.png"
-        );
-      message.channel.sendEmbed(n3tools);
-      break;
-
     case "browser":
       const n3browser = new Discord.RichEmbed()
         .setTitle("N3Browser")
@@ -273,7 +256,7 @@ bot.on("message", message => {
     case "cloud":
       const n3cloud = new Discord.RichEmbed()
         .setTitle("N3Cloud App")
-        .setURL("https://n3xt-players.jimdofree.com/cloud/") //link del conglomerado n3cloud
+        .setURL("https://n3xt-players.jimdofree.com/cloud") //link del conglomerado n3cloud
         .addField(
           "Descripción",
           "Un lugar para todas las formas de contenidos y servicios de N3XT PLAYERS están en la nube. Con la aplicaciones de N3Cloud, podrás administrar tu ID de N3XT PLAYERS muy fácil y sin problemas. La comunicación entre tu y N3 en un solo lugar, y tenemos en cuenta que darte tu privacidad es nuestro principal requisito para servirte, N3Cloud."
@@ -289,10 +272,220 @@ bot.on("message", message => {
       message.channel.sendEmbed(n3cloud);
       break;
 
+    case "guidelines":
+      const n3guidelines = new Discord.RichEmbed()
+        .setTitle("¡Dile al público que tu gran creación está disponible aquí!")
+        .setURL("https://n3xt-players.jimdofree.com/guidelines")
+        .addField(
+          "Los recursos de marca NO necesitan la aprobación de N3XT PLAYERS.",
+          "El uso de la marca de N3XT PLAYERS o las marcas involucradas con las plataformas de éste no necesita ser aprobado por N3XT PLAYERS para aparecer en sus creaciones, sin embargo debe de seguir una serie de reglas que podrás crear tu para garantizar su lectura y aparición en la publicidad, redes sociales, sitios web... N3LineamientodeDisponiblidad."
+        )
+        .addField(
+          "Beneficios",
+          "Los socios de N3XT PLAYERS Play son creadores de todo tipo de contenido, ya sean músicos, escritores, vloggers, desarrolladores de videojuegos, streamers, podcasters entre otros tipos de creadores que se comprometen a llevar contenido de calidad, exclusivo y de forma consecuente."
+        )
+        .addField(
+          "Anuncios, Subscripciones y más...",
+          "Visita nuestra web para más información: https://n3xt-players.jimdofree.com/n3playpartners"
+        )
+        .setColor(0x2f3136)
+        .setThumbnail(
+          "https://image.jimcdn.com/app/cms/image/transf/dimension=341x2048:format=png/path/s686fc98d1e8253e9/image/i6daf93205a3dded9/version/1589059906/image.png"
+        )
+        .setFooter(
+          "N3Assistant",
+          "https://cdn.discordapp.com/attachments/716758879676923915/716760351458459698/unknown.png"
+        );
+      message.channel.sendEmbed(n3guidelines);
+      break;
+
+    case "id":
+      const n3id = new Discord.RichEmbed()
+        .setTitle("N3XT PLAYERS ID")
+        .setURL("https://n3xt-players.jimdofree.com/id/")
+        .addField(
+          "¿Qué puedo hacer con un ID de N3XT PLAYERS?",
+          "Con tu ID de N3XT PLAYERS puedes acceder a todos los servicios de N3XT PLAYERS, N3ID."
+        )
+        .setColor(0x2f3136)
+        .setThumbnail(
+          "https://image.jimcdn.com/app/cms/image/transf/dimension=341x2048:format=png/path/s686fc98d1e8253e9/image/i6daf93205a3dded9/version/1589059906/image.png"
+        )
+        .setFooter(
+          "N3Assistant",
+          "https://cdn.discordapp.com/attachments/716758879676923915/716760351458459698/unknown.png"
+        );
+      message.channel.sendEmbed(n3id);
+      break;
+
+    case "comandos":
+      const n3comandos = new Discord.RichEmbed()
+        .setTitle("N3Assistant en Discord")
+        .addField(
+          "Comandos de N3Assistant:",
+          "`n3acerca`" +
+            "\n`n3ads`" +
+            "\n`n3assistant`" +
+            "\n`n3ayuda` o `n3soporte`" +
+            "\n`n3books`" +
+            "\n`n3browser`" +
+            "\n`n3cloud`" +
+            "\n`n3comandos`" +
+            "\n`n3creators`" +
+            "\n`n3creatorsjoin`" +
+            "\n`n3emoticons`" +
+            "\n`n3events`" +
+            "\n`n3games`" +
+            "\n`n3guidelines`" +
+            "\n`n3id`" +
+            "\n`n3instant`" +
+            "\n`n3partners`" +
+            "\n`n3players` (N3Players App)" +
+            "\n`n3tools`" +
+            "\n`n3tornado`" +
+            "\n`n3website`"
+        )
+        .setColor(0x2f3136)
+        .setThumbnail(
+          "https://cdn.discordapp.com/attachments/697970583513596006/717443403562090647/20200602_142342-ANIMATION.gif"
+        )
+        .setFooter(
+          "N3Assistant",
+          "https://cdn.discordapp.com/attachments/716758879676923915/716760351458459698/unknown.png"
+        );
+      message.channel.sendEmbed(n3comandos);
+      break;
+
+          //nuevo
+      
+    case "players":
+      const n3players = new Discord.RichEmbed()
+        .setTitle("N3Players App")
+        .setURL("https://n3xt-players.jimdofree.com/n3players")
+        .addField(
+          "Una sola aplicación te lleva a todo nuestro mundo.",
+          "Usa las N3Apps para conectar con tus servicios más queridos como productivos de toda nuestra gama de aplicaciones, que disfrutarás en N3Players aplicación con un solo clic gracias a su gran formato de canales que permiten usar estos servicios sin descargar nada."
+        )
+        .setColor(0x2f3136)
+        .setThumbnail(
+          "https://cdn.discordapp.com/attachments/697970583513596006/717443403562090647/20200602_142342-ANIMATION.gif"
+        )
+        .setFooter(
+          "N3Assistant",
+          "https://cdn.discordapp.com/attachments/716758879676923915/716760351458459698/unknown.png"
+        );
+      message.channel.sendEmbed(n3players);
+      break;
+
+    case "store":
+      const n3store = new Discord.RichEmbed()
+        .setTitle("N3Store")
+        .setURL("https://n3xt-players.jimdofree.com/store")
+        .addField("Descripción", " .")
+        .setColor(0x2f3136)
+        .setThumbnail(
+          "https://cdn.discordapp.com/attachments/697970583513596006/717443403562090647/20200602_142342-ANIMATION.gif"
+        )
+        .setFooter(
+          "N3Assistant",
+          "https://cdn.discordapp.com/attachments/716758879676923915/716760351458459698/unknown.png"
+        );
+      message.channel.sendEmbed(n3store);
+      break;
+
+    case "music":
+      const n3music = new Discord.RichEmbed()
+        .setTitle("N3Music")
+        .setURL("https://n3xt-players.jimdofree.com/music")
+        .addField("Descripción", " .")
+        .setColor(0x2f3136)
+        .setThumbnail(
+          "https://cdn.discordapp.com/attachments/697970583513596006/717443403562090647/20200602_142342-ANIMATION.gif"
+        )
+        .setFooter(
+          "N3Assistant",
+          "https://cdn.discordapp.com/attachments/716758879676923915/716760351458459698/unknown.png"
+        );
+      message.channel.sendEmbed(n3music);
+      break;
+
+    case "tv":
+      const n3tv = new Discord.RichEmbed()
+        .setTitle("N3TV")
+        .setURL("https://n3xt-players.jimdofree.com/tv")
+        .addField("Descripción", " .")
+        .setColor(0x2f3136)
+        .setThumbnail(
+          "https://cdn.discordapp.com/attachments/697970583513596006/717443403562090647/20200602_142342-ANIMATION.gif"
+        )
+        .setFooter(
+          "N3Assistant",
+          "https://cdn.discordapp.com/attachments/716758879676923915/716760351458459698/unknown.png"
+        );
+      message.channel.sendEmbed(n3tv);
+      break;
+
+    case "games":
+      const n3games = new Discord.RichEmbed()
+        .setTitle("N3Games")
+        .setURL("https://n3xt-players.jimdofree.com/games")
+        .addField(
+          "Descripción",
+          "Juega entre muchos juegos con tus amigos y disfruta de los juegos móviles mas emblemáticos o los que más te interesan y disfruta de mucho más entre todos. Cada MB cuenta, todos los juegos en streamimg para ti, N3Games."
+        )
+        .setColor(0x2f3136)
+        .setThumbnail(
+          "https://cdn.discordapp.com/attachments/697970583513596006/717504863105450025/Logopit_1590899551648.png"
+        )
+        .setFooter(
+          "N3Assistant",
+          "https://cdn.discordapp.com/attachments/716758879676923915/716760351458459698/unknown.png"
+        );
+      message.channel.sendEmbed(n3games);
+      break;
+
+    case "tools":
+      const n3tools = new Discord.RichEmbed()
+        .setTitle("N3Tools")
+        .setURL("https://n3xt-players.jimdofree.com/tools-1/")
+        .addField(
+          "Descripción",
+          "Crea tu propio contenido de imágenes, videos y audio para tener en tu dispositivo o compartir. Sé un desarrolador de software y sube tu aplicación a N3Store con un generador de proyectos oficial de Steelly basado en N3Ux. Crea documentos, presentaciones y hojas de cálculo, conecta con tu equipo y colabora en vivo. Todo esto y más en una sola aplicación, N3Tools."
+        )
+        .setColor(0x2f3136)
+        .setThumbnail(
+          "https://cdn.discordapp.com/attachments/697970583513596006/717504863960956958/Logopit_1590899898579.png"
+        )
+        .setFooter(
+          "N3Assistant",
+          "https://cdn.discordapp.com/attachments/716758879676923915/716760351458459698/unknown.png"
+        );
+      message.channel.sendEmbed(n3tools);
+      break;
+
+    case "books":
+      const n3books = new Discord.RichEmbed()
+        .setTitle("N3Books")
+        .setURL("https://n3xt-players.jimdofree.com/books-1/")
+        .addField(
+          "Pasa la página de una forma MUY SMOOOTH",
+          "Lee  el contenido proveniente de los creadores de libros de N3XT PLAYERS. Disfruta y pasa las página de una forma MUY SMOOOTH, puedes tener de forma gratuita al alcance de un pulgar todos nuestros libris. Pistas, álbumes, emisoras de radio locales, playlists, etc. todo en una sola aplicación, N3Books."
+        )
+        .setColor(0x2f3136)
+        .setThumbnail(
+          "https://cdn.discordapp.com/attachments/697970583513596006/717504864808337438/Logopit_1590947500612.png"
+        )
+        .setFooter(
+          "N3Assistant",
+          "https://cdn.discordapp.com/attachments/716758879676923915/716760351458459698/unknown.png"
+        );
+      message.channel.sendEmbed(n3books);
+      break;
+
     case "creators":
       const n3creators = new Discord.RichEmbed()
         .setTitle("N3Creators")
-        .setURL("https://n3xt-players.jimdofree.com/creators")
+        .setURL("https://n3xt-players.jimdofree.com/creators-1")
         .addField(
           "Descripción",
           "Durante años hemos diseñado la mejor forma de llegar al publico y nos convertimos en una gran comunidad. Permitimos con toda emoción que sean parte de nuestro éxito compartido. Sabemos que los creadores son parte esencial de nuestro universo y es hora de darles aquellas herramientas para que ambos lleguemos al máximo, N3Creators."
@@ -330,110 +523,9 @@ bot.on("message", message => {
         );
       message.channel.sendEmbed(n3creatorsjoin);
       break;
-
-    case "books":
-      const n3books = new Discord.RichEmbed()
-        .setTitle("N3Books")
-        .setURL("https://n3xt-players.jimdofree.com/books")
-        .addField(
-          "Pasa la página de una forma MUY SMOOOTH",
-          "Lee  el contenido proveniente de los creadores de libros de N3XT PLAYERS. Disfruta y pasa las página de una forma MUY SMOOOTH, puedes tener de forma gratuita al alcance de un pulgar todos nuestros libris. Pistas, álbumes, emisoras de radio locales, playlists, etc. todo en una sola aplicación, N3Books."
-        )
-        .setColor(0x2f3136)
-        .setThumbnail(
-          "https://cdn.discordapp.com/attachments/697970583513596006/717504864808337438/Logopit_1590947500612.png"
-        )
-        .setFooter(
-          "N3Assistant",
-          "https://cdn.discordapp.com/attachments/716758879676923915/716760351458459698/unknown.png"
-        );
-      message.channel.sendEmbed(n3books);
-      break;
-
-    case "guidelines":
-      const n3guidelines = new Discord.RichEmbed()
-        .setTitle("¡Dile al público que tu gran creación está disponible aquí!")
-        .setURL("https://n3xt-players.jimdofree.com/guidelines")
-        .addField(
-          "Los recursos de marca NO necesitan la aprobación de N3XT PLAYERS.",
-          "El uso de la marca de N3XT PLAYERS o las marcas involucradas con las plataformas de éste no necesita ser aprobado por N3XT PLAYERS para aparecer en sus creaciones, sin embargo debe de seguir una serie de reglas que podrás crear tu para garantizar su lectura y aparición en la publicidad, redes sociales, sitios web... N3LineamientodeDisponiblidad."
-        )
-        .addField(
-          "Beneficios",
-          "Los socios de N3XT PLAYERS Play son creadores de todo tipo de contenido, ya sean músicos, escritores, vloggers, desarrolladores de videojuegos, streamers, podcasters entre otros tipos de creadores que se comprometen a llevar contenido de calidad, exclusivo y de forma consecuente."
-        )
-        .addField(
-          "Anuncios, Subscripciones y más...",
-          "Visita nuestra web para más información: https://n3xt-players.jimdofree.com/n3playpartners"
-        )
-        .setColor(0x2f3136)
-        .setThumbnail(
-          "https://image.jimcdn.com/app/cms/image/transf/dimension=341x2048:format=png/path/s686fc98d1e8253e9/image/i6daf93205a3dded9/version/1589059906/image.png"
-        )
-        .setFooter(
-          "N3Assistant",
-          "https://cdn.discordapp.com/attachments/716758879676923915/716760351458459698/unknown.png"
-        );
-      message.channel.sendEmbed(n3guidelines);
-      break;
-
-    case "id":
-      const n3id = new Discord.RichEmbed()
-        .setTitle("N3XT PLAYERS ID")
-        .setURL("https://n3xt-players.jimdofree.com/account")
-        .addField(
-          "¿Qué puedo hacer con un ID de N3XT PLAYERS?",
-          "Con tu ID de N3XT PLAYERS puedes acceder a todos los servicios de N3XT PLAYERS, N3ID."
-        )
-        .setColor(0x2f3136)
-        .setThumbnail(
-          "https://image.jimcdn.com/app/cms/image/transf/dimension=341x2048:format=png/path/s686fc98d1e8253e9/image/i6daf93205a3dded9/version/1589059906/image.png"
-        )
-        .setFooter(
-          "N3Assistant",
-          "https://cdn.discordapp.com/attachments/716758879676923915/716760351458459698/unknown.png"
-        );
-      message.channel.sendEmbed(n3id);
-      break;
-
-    case "comandos":
-      const n3comandos = new Discord.RichEmbed()
-        .setTitle("N3Assistant")
-        .addField(
-          "Comandos de N3Assistant:",
-          "`n3acerca`" +
-            "\n`n3ads`" +
-            "\n`n3assistant`" +
-            "\n`n3ayuda`" +
-            "\n`n3books`" +
-            "\n`n3browser`" +
-            "\n`n3cloud`" +
-            "\n`n3comandos`" +
-            "\n`n3creators`" +
-            "\n`n3creatorsjoin`" +
-            "\n`creatorsjoin`" +
-            "\n`n3emoticons`" +
-            "\n`n3events`" +
-            "\n`n3games`" +
-            "\n`n3guidelines`" +
-            "\n`n3id`" +
-            "\n`n3instant`" +
-            "\n`n3partners`" +
-            "\n`n3tools`" +
-            "\n`n3tornado`" +
-            "\n`n3website`"
-        )
-        .setColor(0x2f3136)
-        .setThumbnail(
-          "https://cdn.discordapp.com/attachments/697970583513596006/717443403562090647/20200602_142342-ANIMATION.gif"
-        )
-        .setFooter(
-          "N3Assistant",
-          "https://cdn.discordapp.com/attachments/716758879676923915/716760351458459698/unknown.png"
-        );
-      message.channel.sendEmbed(n3comandos);
-      break;
-
+      
+      //nuevo fin
+      
     case "ads":
       const n3ads = new Discord.RichEmbed()
         .setTitle("N3XT PLAYERS ADS")
