@@ -1,31 +1,9 @@
-//GLITCH
-
-const http = require("http");
-const express = require("express");
-const app = express();
-
-app.use(express.static("public"));
-
-app.get("/", function(request, response) {
-  response.sendFile(__dirname + "/views/index.html");
-});
-
-app.get("/", (request, response) => {
-  response.sendStatus(200);
-});
-
-app.listen(process.env.PORT);
-
-setInterval(() => {
-  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-}, 280000);
-
-//BOT
-
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 
 const PREFIX = "n3";
+
+const embed = new Discord.RichEmbed();
 
 bot.on("ready", () => {
   //mal propuse
@@ -39,7 +17,7 @@ bot.on("guildMemberAdd", member => {
   const canal = member.guild.channels.find(
     channel => channel.id === "717215232254279720"
   );
-  var nuevomiembro = new Discord.RichEmbed()
+  const nuevomiembro = embed
     .setTitle("BIENVENID@")
     .addField(
       "Usuario",
@@ -63,12 +41,12 @@ bot.on("message", message => {
   let args = message.content.substring(PREFIX.length).split(" ");
   switch (args[0]) {
     case "website":
-      const n3xtplayers = new Discord.RichEmbed()
+      const n3xtplayers = embed
         .setTitle("N3XT PLAYERS")
         .setURL("https://n3xt-players.jimdofree.com")
         .addField(
           "Descripción",
-          "Existen 2 mundos, uno real y el otro virtual. Mientras como humanos debemos dividirnos entre la realidad y lo virtual, nos olvidamos para que fue creado el mundo virtual, para complementar el mundo real. N3 es un mundo virtual creado para experimentar el mundo real con los super poderes del mundo virtual, N3XT PLAYERS."
+          "Existen 2 mundos, uno real y el otro virtual. Mientras como humanos debemos dividirnos entre la realidad y lo virtual, nos olvidamos para qué fue creado el mundo virtual, para complementar el mundo real. N3 es un mundo virtual creado para experimentar el mundo real con los superpoderes del mundo virtual, N3XT PLAYERS."
         )
         .setColor(0x2f3136)
         .setThumbnail(
@@ -82,12 +60,12 @@ bot.on("message", message => {
       break;
 
     case "acerca":
-      const n3acerca = new Discord.RichEmbed()
+      const n3acerca = embed
         .setTitle("ACERCA DE N3XT PLAYERS")
         .setURL("https://n3xt-players.jimdofree.com/aboutn3/")
         .addField(
           "Nosotros:",
-          "Creamos un mundo de servicios donde tu privacidad, tu integridad y tu creatividad sea la prioridad. Donde tu y tú estilo lleguen a donde quieras, queremos transformar tu mundo real con el mundo virtual, N3XT PLAYERS."
+          "Creamos un mundo de servicios donde tu privacidad, tu integridad y tu creatividad sea la prioridad. Donde tú y tu estilo lleguen a donde quieras, queremos transformar tu mundo real con el mundo virtual, N3XT PLAYERS."
         )
         .setColor(0x2f3136)
         .setThumbnail(
@@ -101,12 +79,12 @@ bot.on("message", message => {
       break;
 
     case "ayuda":
-      var n3ayuda = new Discord.RichEmbed()
+      var n3ayuda = embed
         .setTitle("N3Ayuda")
         .setURL("https://n3xt-players.jimdofree.com/support")
         .addField(
           "Soporte Técnico",
-          "Si tienes alguna duda de algún servicio de N3XT PLAYERS, ¡Encuentra tu respuesta en nuestra web o menciona a `@N3Team` en el chat para obter ayuda más rápida!, N3XT PLAYERS."
+          "Si tienes alguna duda de algún servicio de N3XT PLAYERS, ¡Encuentra tu respuesta en nuestra web o menciona a `@N3Team` en el chat para obtener ayuda más rápida!, N3XT PLAYERS."
         )
         .setColor(0x2f3136)
         .setThumbnail(
@@ -120,12 +98,12 @@ bot.on("message", message => {
       break;
 
     case "soporte":
-      const n3soporte = new Discord.RichEmbed()
+      const n3soporte = embed
         .setTitle("N3Soporte")
         .setURL("https://n3xt-players.jimdofree.com/support")
         .addField(
           "Soporte Técnico",
-          "Si tienes alguna duda de algún servicio de N3XT PLAYERS, ¡Encuentra tu respuesta en nuestra web o menciona a `@N3Team` en el chat para obter ayuda más rápida!, N3XT PLAYERS."
+          "Si tienes alguna duda de algún servicio de N3XT PLAYERS, ¡Encuentra tu respuesta en nuestra web o menciona a `@N3Team` en el chat para obtener ayuda más rápida!, N3XT PLAYERS."
         )
         .setColor(0x2f3136)
         .setThumbnail(
@@ -152,7 +130,7 @@ bot.on("message", message => {
       break;
 
     case "assistant":
-      const n3assistant = new Discord.RichEmbed() //asistentetete
+      const n3assistant = embed //asistentetete
         .setTitle("N3Asistant")
         .addField(
           "Descripción",
@@ -170,12 +148,12 @@ bot.on("message", message => {
       break;
 
     case "version":
-      const n3version = new Discord.RichEmbed() //version de n3assistant
+      const n3version = embed //versión de n3assistant
         .setTitle("N3Asistant")
         .addField("Fase:", "Alfa")
         .addField(
           "¿Qué significa esto?",
-          "Significa que el servicio aún está en fase de desarrollo y que puede contener fallas e inestebilidades, éste satisface la mayoría de requisitos, pero no quita que no pueda presentar errores/fallas."
+          "Significa que el servicio aún está en fase de desarrollo y que puede contener fallas e inestabilidades, éste satisface la mayoría de requisitos, pero no quita que no pueda presentar errores/fallas."
         )
         .setColor(0x2f3136)
         .setThumbnail(
@@ -189,7 +167,7 @@ bot.on("message", message => {
       break;
 
     case "instant": //n3instant dejara de existir el 20 de julio 2020, conglomerado n3play
-      const n3instant = new Discord.RichEmbed()
+      const n3instant = embed
         .setTitle("N3Instant")
         .setURL("https://n3xt-players.jimdofree.com/instant/")
         .addField(
@@ -208,7 +186,7 @@ bot.on("message", message => {
       break;
 
     case "partners":
-      const n3playpartners = new Discord.RichEmbed()
+      const n3playpartners = embed
         .setTitle("N3XT PLAYERS PARTNERS")
         .setURL("https://n3xt-players.jimdofree.com/n3playpartners")
         .addField(
@@ -220,7 +198,7 @@ bot.on("message", message => {
           "La monetización de su contenido. Contenido de marca (contenido que no necesita revisión de N3XT PLAYERS para subirse, debe cumplir con las políticas de N3), entre otras cosas."
         )
         .addField(
-          "Anuncios, Subscripciones y más...",
+          "Anuncios, Suscripciones y más...",
           "Visita nuestra web para más información: https://n3xt-players.jimdofree.com/n3playpartners"
         )
         .setColor(0x2f3136)
@@ -235,7 +213,7 @@ bot.on("message", message => {
       break;
 
     case "browser":
-      const n3browser = new Discord.RichEmbed()
+      const n3browser = embed
         .setTitle("N3Browser")
         .setURL("https://n3xt-players.jimdofree.com/browser") //link del conglomerado n3finder
         .addField(
@@ -254,7 +232,7 @@ bot.on("message", message => {
       break;
 
     case "cloud":
-      const n3cloud = new Discord.RichEmbed()
+      const n3cloud = embed
         .setTitle("N3Cloud App")
         .setURL("https://n3xt-players.jimdofree.com/cloud") //link del conglomerado n3cloud
         .addField(
@@ -273,7 +251,7 @@ bot.on("message", message => {
       break;
 
     case "guidelines":
-      const n3guidelines = new Discord.RichEmbed()
+      const n3guidelines = embed
         .setTitle("¡Dile al público que tu gran creación está disponible aquí!")
         .setURL("https://n3xt-players.jimdofree.com/guidelines")
         .addField(
@@ -285,7 +263,7 @@ bot.on("message", message => {
           "Los socios de N3XT PLAYERS Play son creadores de todo tipo de contenido, ya sean músicos, escritores, vloggers, desarrolladores de videojuegos, streamers, podcasters entre otros tipos de creadores que se comprometen a llevar contenido de calidad, exclusivo y de forma consecuente."
         )
         .addField(
-          "Anuncios, Subscripciones y más...",
+          "Anuncios, Suscripciones y más...",
           "Visita nuestra web para más información: https://n3xt-players.jimdofree.com/n3playpartners"
         )
         .setColor(0x2f3136)
@@ -300,7 +278,7 @@ bot.on("message", message => {
       break;
 
     case "id":
-      const n3id = new Discord.RichEmbed()
+      const n3id = embed
         .setTitle("N3XT PLAYERS ID")
         .setURL("https://n3xt-players.jimdofree.com/id/")
         .addField(
@@ -319,7 +297,7 @@ bot.on("message", message => {
       break;
 
     case "comandos":
-      const n3comandos = new Discord.RichEmbed()
+      const n3comandos = embed
         .setTitle("N3Assistant en Discord")
         .addField(
           "Comandos de N3Assistant:",
@@ -356,10 +334,10 @@ bot.on("message", message => {
       message.channel.sendEmbed(n3comandos);
       break;
 
-          //nuevo
-      
+    //nuevo
+
     case "players":
-      const n3players = new Discord.RichEmbed()
+      const n3players = embed
         .setTitle("N3Players App")
         .setURL("https://n3xt-players.jimdofree.com/n3players")
         .addField(
@@ -378,7 +356,7 @@ bot.on("message", message => {
       break;
 
     case "store":
-      const n3store = new Discord.RichEmbed()
+      const n3store = embed
         .setTitle("N3Store")
         .setURL("https://n3xt-players.jimdofree.com/store")
         .addField("Descripción", " .")
@@ -394,7 +372,7 @@ bot.on("message", message => {
       break;
 
     case "music":
-      const n3music = new Discord.RichEmbed()
+      const n3music = embed
         .setTitle("N3Music")
         .setURL("https://n3xt-players.jimdofree.com/music")
         .addField("Descripción", " .")
@@ -410,7 +388,7 @@ bot.on("message", message => {
       break;
 
     case "tv":
-      const n3tv = new Discord.RichEmbed()
+      const n3tv = embed
         .setTitle("N3TV")
         .setURL("https://n3xt-players.jimdofree.com/tv")
         .addField("Descripción", " .")
@@ -426,12 +404,12 @@ bot.on("message", message => {
       break;
 
     case "games":
-      const n3games = new Discord.RichEmbed()
+      const n3games = embed
         .setTitle("N3Games")
         .setURL("https://n3xt-players.jimdofree.com/games")
         .addField(
           "Descripción",
-          "Juega entre muchos juegos con tus amigos y disfruta de los juegos móviles mas emblemáticos o los que más te interesan y disfruta de mucho más entre todos. Cada MB cuenta, todos los juegos en streamimg para ti, N3Games."
+          "Juega entre muchos juegos con tus amigos y disfruta de los juegos móviles más emblemáticos o los que más te interesan y disfruta de mucho más entre todos. Cada MB cuenta, todos los juegos en streamimg para ti, N3Games."
         )
         .setColor(0x2f3136)
         .setThumbnail(
@@ -445,12 +423,12 @@ bot.on("message", message => {
       break;
 
     case "tools":
-      const n3tools = new Discord.RichEmbed()
+      const n3tools = embed
         .setTitle("N3Tools")
         .setURL("https://n3xt-players.jimdofree.com/tools-1/")
         .addField(
           "Descripción",
-          "Crea tu propio contenido de imágenes, videos y audio para tener en tu dispositivo o compartir. Sé un desarrolador de software y sube tu aplicación a N3Store con un generador de proyectos oficial de Steelly basado en N3Ux. Crea documentos, presentaciones y hojas de cálculo, conecta con tu equipo y colabora en vivo. Todo esto y más en una sola aplicación, N3Tools."
+          "Crea tu propio contenido de imágenes, videos y audio para tener en tu dispositivo o compartir. Sé un desarrollador de software y sube tu aplicación a N3Store con un generador de proyectos oficial de Steelly basado en N3Ux. Crea documentos, presentaciones y hojas de cálculo, conecta con tu equipo y colabora en vivo. Todo esto y más en una sola aplicación, N3Tools."
         )
         .setColor(0x2f3136)
         .setThumbnail(
@@ -464,7 +442,7 @@ bot.on("message", message => {
       break;
 
     case "books":
-      const n3books = new Discord.RichEmbed()
+      const n3books = embed
         .setTitle("N3Books")
         .setURL("https://n3xt-players.jimdofree.com/books-1/")
         .addField(
@@ -483,12 +461,12 @@ bot.on("message", message => {
       break;
 
     case "creators":
-      const n3creators = new Discord.RichEmbed()
+      const n3creators = embed
         .setTitle("N3Creators")
         .setURL("https://n3xt-players.jimdofree.com/creators-1")
         .addField(
           "Descripción",
-          "Durante años hemos diseñado la mejor forma de llegar al publico y nos convertimos en una gran comunidad. Permitimos con toda emoción que sean parte de nuestro éxito compartido. Sabemos que los creadores son parte esencial de nuestro universo y es hora de darles aquellas herramientas para que ambos lleguemos al máximo, N3Creators."
+          "Durante años hemos diseñado la mejor forma de llegar al público y nos convertimos en una gran comunidad. Permitimos con toda emoción que sean parte de nuestro éxito compartido. Sabemos que los creadores son parte esencial de nuestro universo y es hora de darles aquellas herramientas para que ambos lleguemos al máximo, N3Creators."
         )
         .addField(
           "¿Quieres formar parte de N3Creators?",
@@ -506,7 +484,7 @@ bot.on("message", message => {
       break;
 
     case "creatorsjoin":
-      const n3creatorsjoin = new Discord.RichEmbed()
+      const n3creatorsjoin = embed
         .setTitle("¡Únete a N3Creators!")
         .setURL("https://n3xt-players.jimdofree.com/creators-form") //cambiar el link cuando exista uno para ingresar
         .addField(
@@ -523,11 +501,11 @@ bot.on("message", message => {
         );
       message.channel.sendEmbed(n3creatorsjoin);
       break;
-      
-      //nuevo fin
-      
+
+    //nuevo fin
+
     case "ads":
-      const n3ads = new Discord.RichEmbed()
+      const n3ads = embed
         .setTitle("N3XT PLAYERS ADS")
         .setURL("https://n3xt-players.jimdofree.com/ads")
         .addField(
@@ -546,7 +524,7 @@ bot.on("message", message => {
       break;
 
     case "events":
-      const n3events = new Discord.RichEmbed()
+      const n3events = embed
         .setTitle("Eventos de N3XT PLAYERS")
         .setURL("https://n3xt-players.jimdofree.com/events") //link del conglomerado n3play
         .addField("Próximos eventos")
@@ -562,7 +540,7 @@ bot.on("message", message => {
       break;
 
     case "emoticons":
-      const n3emoticons = new Discord.RichEmbed()
+      const n3emoticons = embed
         .setTitle("Emoticones de N3XT PLAYERS")
         .setURL("https://n3xt-players.jimdofree.com/emoticons")
         .addField("MUY PRONTO", "<:LynzQUE:698050577485004881>")
@@ -579,7 +557,7 @@ bot.on("message", message => {
 
     case "tornado":
       message.react("🌪️");
-      const n3tornadoazul = new Discord.RichEmbed()
+      const n3tornadoazul = embed
         .setTitle("Tornado Azul 🌪️")
         .setURL("https://n3xt-players.jimdofree.com/n3tornadoazul")
         .addField(
@@ -598,12 +576,12 @@ bot.on("message", message => {
       break;
 
     case "S001MN300":
-      const S001MN300 = new Discord.RichEmbed()
+      const S001MN300 = embed
         .setTitle("N3XT PLAYERS")
         .setURL("https://n3xt-players.jimdofree.com")
         .addField(
           "¡Estamos en todas tus redes sociales favoritas!",
-          "Puedes seguirnos precionando alguno de los siguientes enlaces:"
+          "Puedes seguirnos presionando alguno de los siguientes enlaces:"
         )
         .addField("Twitter:", "https://twitter.com/n3players")
         .addField(
@@ -628,7 +606,7 @@ bot.on("message", message => {
       break;
 
     case "S002MN300":
-      const S002MN300 = new Discord.RichEmbed()
+      const S002MN300 = embed
         .setTitle("Políticas de privacidad de N3XT PLAYERS")
         .setURL("https://n3xt-players.jimdofree.com/terms")
         .addField(
@@ -647,7 +625,7 @@ bot.on("message", message => {
       break;
 
     case "S003MN300":
-      const S003MN300 = new Discord.RichEmbed()
+      const S003MN300 = embed
         .setTitle("N3XT PLAYERS en Facebook")
         .setURL("https://facebook.com/n3playersok")
         .addField(
@@ -666,7 +644,7 @@ bot.on("message", message => {
       break;
 
     case "S004MN300":
-      const n3tweet = new Discord.RichEmbed()
+      const n3tweet = embed
         .setTitle("Maia twitteó:")
         .setURL(
           "https://twitter.com/maiatheone/status/1268027264572235777?s=20"
