@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 const PREFIX = "n3";
 
 const embed = new Discord.RichEmbed();
-const nanana = "lo siento mucho, los administradores no me permiten ejecutar este comando por ti."
+const nanana = "lo siento mucho, los administradores no me permiten ejecutar este comando por ti.";
 
 bot.on("ready", () => {
   console.log("estoy listo!");
