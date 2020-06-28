@@ -6,7 +6,6 @@ const PREFIX = "n3";
 const embed = new Discord.RichEmbed();
 
 bot.on("ready", () => {
-  //mal porpuse
   console.log("estoy listo!");
   bot.user
     .setActivity("N3XT PLAYERS SERVER", { type: "WATCHING" })
@@ -39,6 +38,21 @@ bot.on("guildMemberAdd", member => {
 bot.on("message", message => {
   let args = message.content.substring(PREFIX.length).split(" ");
   switch (args[0]) {
+    //clearN3
+    case "clear":
+      if (!message.member.permissions.has("ADMINISTRATOR")) {
+        return message.reply(
+          "lo siento mucho, los administradores no me petmiten ejecutar este comando por ti."
+        );
+      }
+      if (!args[1])
+        return message.reply(
+          "por favor especifica la cantidad de mensajes que deseas borrar..."
+        );
+      message.channel.bulkDelete(args[1]);
+      break;
+    //fin clearN3
+
     //ayudaymásN3
     case "website":
       const n3xtplayers = embed
@@ -116,19 +130,6 @@ bot.on("message", message => {
       message.channel.sendEmbed(n3soporte);
       break;
     //fin ayudaymásN3
-
-    case "clear": //clear
-      if (!message.member.permissions.has("ADMINISTRATOR")) {
-        return message.reply(
-          "lo siento mucho, los administradores no me petmiten ejecutar este comando por ti."
-        );
-      }
-      if (!args[1])
-        return message.reply(
-          "por favor especifica la cantidad de mensajes que deseas borrar..."
-        );
-      message.channel.bulkDelete(args[1]);
-      break;
 
     //assistantN3
     case "assistant":
@@ -275,8 +276,8 @@ bot.on("message", message => {
         );
       message.channel.sendEmbed(n3tv);
       break;
-      
-          case "books":
+
+    case "books":
       const n3books = embed
         .setTitle("N3Books")
         .setURL("https://n3xt-players.jimdofree.com/books-1/")
@@ -316,7 +317,7 @@ bot.on("message", message => {
       message.channel.sendEmbed(n3id);
       break;
 
-          case "creators":
+    case "creators":
       const n3creators = embed
         .setTitle("N3Creators")
         .setURL("https://n3xt-players.jimdofree.com/creators-1")
@@ -357,7 +358,7 @@ bot.on("message", message => {
         );
       message.channel.sendEmbed(n3creatorsjoin);
       break;
-      
+
     case "partners":
       const n3playpartners = embed
         .setTitle("N3XT PLAYERS PARTNERS")
@@ -411,8 +412,8 @@ bot.on("message", message => {
         );
       message.channel.sendEmbed(n3guidelines);
       break;
-      
-          case "ads":
+
+    case "ads":
       const n3ads = embed
         .setTitle("N3XT PLAYERS ADS")
         .setURL("https://n3xt-players.jimdofree.com/ads")
