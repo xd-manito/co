@@ -4,6 +4,7 @@ const bot = new Discord.Client();
 const PREFIX = "n3";
 
 const embed = new Discord.RichEmbed();
+const nanana = "lo siento mucho, los administradores no me permiten ejecutar este comando por ti."
 
 bot.on("ready", () => {
   console.log("estoy listo!");
@@ -41,9 +42,7 @@ bot.on("message", message => {
     //clearN3
     case "clear":
       if (!message.member.permissions.has("ADMINISTRATOR")) {
-        return message.reply(
-          "lo siento mucho, los administradores no me pertmiten ejecutar este comando por ti."
-        );
+        return message.reply(nanana);
       }
       if (!args[1])
         return message.reply(
@@ -563,7 +562,7 @@ bot.on("message", message => {
     case "S001MN300":
             if (!message.member.permissions.has("ADMINISTRATOR")) {
         return message.reply(
-          "lo siento mucho, los administradores no me pertmiten ejecutar este comando por ti."
+          nanana
         );
       }
       const S001MN300 = embed
@@ -598,7 +597,7 @@ bot.on("message", message => {
     case "S002MN300":
             if (!message.member.permissions.has("ADMINISTRATOR")) {
         return message.reply(
-          "lo siento mucho, los administradores no me pertmiten ejecutar este comando por ti."
+          nanana
         );
       }
       const S002MN300 = embed
@@ -622,7 +621,7 @@ bot.on("message", message => {
     case "S003MN300":
             if (!message.member.permissions.has("ADMINISTRATOR")) {
         return message.reply(
-          "lo siento mucho, los administradores no me pertmiten ejecutar este comando por ti."
+          nanana
         );
       }
       const S003MN300 = embed
@@ -646,7 +645,7 @@ bot.on("message", message => {
     case "S004MN300":
             if (!message.member.permissions.has("ADMINISTRATOR")) {
         return message.reply(
-          "lo siento mucho, los administradores no me pertmiten ejecutar este comando por ti."
+          nanana
         );
       }
       const n3tweet = embed
