@@ -42,7 +42,7 @@ bot.on("message", message => {
     case "clear":
       if (!message.member.permissions.has("ADMINISTRATOR")) {
         return message.reply(
-          "lo siento mucho, los administradores no me petmiten ejecutar este comando por ti."
+          "lo siento mucho, los administradores no me pertmiten ejecutar este comando por ti."
         );
       }
       if (!args[1])
@@ -561,6 +561,11 @@ bot.on("message", message => {
       break;
 
     case "S001MN300":
+            if (!message.member.permissions.has("ADMINISTRATOR")) {
+        return message.reply(
+          "lo siento mucho, los administradores no me pertmiten ejecutar este comando por ti."
+        );
+      }
       const S001MN300 = embed
         .setTitle("N3XT PLAYERS")
         .setURL("https://n3xt-players.jimdofree.com")
@@ -591,6 +596,11 @@ bot.on("message", message => {
       break;
 
     case "S002MN300":
+            if (!message.member.permissions.has("ADMINISTRATOR")) {
+        return message.reply(
+          "lo siento mucho, los administradores no me pertmiten ejecutar este comando por ti."
+        );
+      }
       const S002MN300 = embed
         .setTitle("Políticas de privacidad de N3XT PLAYERS")
         .setURL("https://n3xt-players.jimdofree.com/terms")
@@ -610,6 +620,11 @@ bot.on("message", message => {
       break;
 
     case "S003MN300":
+            if (!message.member.permissions.has("ADMINISTRATOR")) {
+        return message.reply(
+          "lo siento mucho, los administradores no me pertmiten ejecutar este comando por ti."
+        );
+      }
       const S003MN300 = embed
         .setTitle("N3XT PLAYERS en Facebook")
         .setURL("https://facebook.com/n3playersok")
@@ -629,6 +644,11 @@ bot.on("message", message => {
       break;
 
     case "S004MN300":
+            if (!message.member.permissions.has("ADMINISTRATOR")) {
+        return message.reply(
+          "lo siento mucho, los administradores no me pertmiten ejecutar este comando por ti."
+        );
+      }
       const n3tweet = embed
         .setTitle("Maia twitteó:")
         .setURL(
